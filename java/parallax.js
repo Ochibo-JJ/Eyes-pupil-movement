@@ -47,18 +47,33 @@ var handleMouseMove = function (event) {
 	input.mouseY.fraction= (input.mouseY.current - input.mouseY.start) / input.mouseY.range;
 
 	//outputX
-		output.x.current = output.x.start + (input.mouseX.fraction * output.x.range);
+	   output.x.current = output.x.start + (input.mouseX.fraction * output.x.range);
 		//to make the pupils follow the inverse direction do next line ,,same for output y
 			//output.x.current = output.x.end - (input.mouseX.fraction * output.x.range);
 		//to make googly eyes, do line next
-			output.x.opposite = output.x.end - (input.mouseX.fraction * output.x.range);
+			//output.x.opposite = output.x.end - (input.mouseX.fraction * output.x.range);
 
 
 	// outputY
-		output.y.current = output.y.start + (input.mouseY.fraction * output.y.range);
+	  output.y.current = output.y.start + (input.mouseY.fraction * output.y.range);
+		//inverted
+	  		//output.y.current = output.y.end - (input.mouseY.fraction * output.y.range);
 		//googly eyes
-			output.y.opposite = output.y.end - (input.mouseY.fraction * output.y.range);
+			//output.y.opposite = output.y.end - (input.mouseY.fraction * output.y.range);
 
+    //using buttons to activate different modes
+	document.getElementById("normalEyes").onclick = function(){
+		output.x.current = output.x.start + (input.mouseX.fraction * output.x.range);
+		output.y.current = output.y.start + (input.mouseY.fraction * output.y.range);
+	};
+	document.getElementById("InvertedEyes").onclick = function(){
+		output.x.current = output.x.end - (input.mouseX.fraction * output.x.range);
+		output.y.current = output.y.end - (input.mouseY.fraction * output.y.range);
+	};
+	document.getElementById("GooglyEyes").onclick = function(){
+		output.x.opposite = output.x.end - (input.mouseX.fraction * output.x.range);
+		output.y.opposite = output.y.end - (input.mouseY.fraction * output.y.range);
+	};
 
 	//APPLY OUTPUT TO HTML
 	pupilsArray.forEach(function (pupil, k) {

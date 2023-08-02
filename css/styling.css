@@ -2,19 +2,6 @@ body{
 	background-color: powderblue;
 	margin: 0;
 }
-/*.block{
-	width: 100px;
-	height: 100vh;
-	background-color: forestgreen;
-}
-.block2{
-	width: 200px;
-	height: 100vh;
-	background-color: forestgreen;
-	position: absolute;
-	top: 0;
-	right: 0;
-}*/
 .eye{
 	background-color: white;
 	width: 100px;
@@ -43,4 +30,23 @@ body{
 }
 .eye2{
 	margin-left: 0;
+}
+.button{
+	position: absolute;
+	top: 80%;
+	left: 30%;
+}
+button{
+	font-size: 2em;
+	color: black;
+	background-color: #79a1bc;
+	box-shadow: 5px 5px 5px 5px #16cce3 ;
+	margin-left: 20px;
+}
+button:hover{
+	background-color: powderblue;
+	box-shadow: -2px -2px 2px 2px black;
+}
+button:active{
+	background-color: #16cce3;
 }
